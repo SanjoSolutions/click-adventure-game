@@ -5,13 +5,21 @@
     <title>Click Adventure Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      #path1267 {
-        stroke-width: 0.264583px;
+      .interactable {
         cursor: pointer;
+        stroke-width: 0.264583px;
       }
 
-      #path1267:hover {
+      .interactable:hover {
         stroke-width: 0.75px;
+      }
+
+      #path1091 {
+        display: none;
+      }
+
+      #path1267 {
+        display: none;
       }
 
       #path1093 {
@@ -97,12 +105,12 @@
         style="display:inline"
       >
         <path
-          style="fill:#cccccc;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          style="fill:#cccccc;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
           d="m 38.103092,184.05154 23.134021,-5.10309 14.288659,-62.25773 -48.989689,2.04124 11.567009,65.31958"
           id="path1089"
         />
         <path
-          style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
           d="M 26.536083,118.73196 59.876287,79.948452"
           id="path1091"
         />
@@ -120,9 +128,18 @@
     </svg>
 
     <script>
+      const $bin = document.getElementById('path1089')
+      const $binLid = document.getElementById('path1091')
       const $paperInBin = document.getElementById('path1267')
       const $paper = document.getElementById('path1093')
 
+      $bin.classList.add('interactable')
+      $bin.addEventListener('click', function () {
+        $binLid.style.display = 'inline'
+        $paperInBin.style.display = 'inline'
+      })
+
+      $paperInBin.classList.add('interactable')
       $paperInBin.addEventListener('click', function () {
         $paper.style.display = 'inline'
       })
