@@ -13,6 +13,10 @@
       #path1267:hover {
         stroke-width: 0.75px;
       }
+
+      #path1093 {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -117,8 +121,10 @@
 
     <script>
       const $paperInBin = document.getElementById('path1267')
+      const $paper = document.getElementById('path1093')
+
       $paperInBin.addEventListener('click', function () {
-        alert('...')
+        $paper.style.display = 'inline'
       })
     </script>
   </body>
