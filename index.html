@@ -5,13 +5,8 @@
     <title>Click Adventure Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      .interactable {
-        cursor: pointer;
+      #bin {
         stroke-width: 0.264583px;
-      }
-
-      .interactable:hover {
-        stroke-width: 0.75px;
       }
 
       #binLid {
@@ -20,10 +15,19 @@
 
       #paperInBin {
         display: none;
+        stroke-width: 0.264583px;
       }
 
       #paper {
         display: none;
+      }
+
+      .interactable {
+        cursor: pointer;
+      }
+
+      .interactable:hover {
+        stroke-width: 0.75px !important;
       }
     </style>
   </head>
@@ -135,12 +139,14 @@
 
       $bin.classList.add('interactable')
       $bin.addEventListener('click', function () {
+        $bin.classList.remove('interactable')
         $binLid.style.display = 'inline'
         $paperInBin.style.display = 'inline'
       })
 
       $paperInBin.classList.add('interactable')
       $paperInBin.addEventListener('click', function () {
+        $paperInBin.classList.remove('interactable')
         $paper.style.display = 'inline'
       })
     </script>
